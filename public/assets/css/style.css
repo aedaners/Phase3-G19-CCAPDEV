@@ -1,0 +1,655 @@
+*{
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body{
+  background-color: #dfe3e8;
+}
+
+#timeDate{
+  margin-left: 80px;
+  text-align: center;
+  position: relative;
+}
+
+/*General scrollbar layout*/
+::-webkit-scrollbar {
+  margin-left: 10px;
+  width: 12px;
+  height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+  border: 1px solid #DFE3E8;
+  border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  background: #FFFFFF;  
+  border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+  background: #FFFFFF;  
+  }
+
+.menubar {  
+  margin-left: 0px;
+  padding-top: 20px;
+  background-color: #868484;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 300px;
+}
+
+.shuttle-icon {
+	margin-bottom: 5px;
+  margin-left: 65px;
+  height: 160px;
+	width: 160px;
+	border: 2px solid black;
+	border-radius: 100%;
+	text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+th, td {
+    background-color: #E5E5E5;
+    border:1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+/*right bar*/
+.profile-icon {
+	margin-bottom: 5px;
+  margin-left: 32px;
+  height: 140px;
+	width: 140px;
+	border: 2px solid black;
+	border-radius: 100%;
+	text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.user-fullname {
+  margin: 0px 10px;
+	text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #E5E5E5;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.exit {
+  background-color: #E5E5E5;
+  padding: 3px;
+  border: 2px solid black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.sign-out {
+  background-color: #E5E5E5;
+  margin-left: 10px;
+  height: 40px;
+	width: 40px;
+}
+
+.rightbar{
+    margin-right: 0px;
+    padding-top: 80px;
+    padding-left: 0px;
+    background-color: #868484;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 200px; 
+}
+
+.rightbar-button {
+  padding: 13px 8px;
+  border-color: black;
+  display: block;
+  background-color: #E5E5E5;
+  color: black;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.rightbar-button:hover {
+  background-color: #d3cece;
+}
+
+
+.menubar button {
+  padding: 22px 16px;
+  border-color: black;
+  display: block;
+  background-color: #E5E5E5;
+  color: black;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+.menubar button:hover {
+  background-color: #d3cece;
+}
+
+
+.menubar button.active {
+  background-color: #CDC3F5;
+}
+
+
+.menuContent {
+  margin-left: 350px;
+  padding: 30px 12px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.pageTitle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+	text-align: center;
+  font-weight: bold;
+  justify-content: center;
+  background-color: #E5E5E5;
+}
+
+/* Dashboard Layout */
+
+/*Layout of the Advance Search button*/
+.advancebutton{
+  border: solid;
+  padding: 10px 16px;
+  background-color: #E5E5E5;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.searchbttn{
+  position: relative;
+  display: inline-block;
+}
+
+.searchreqs{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: auto;
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left;
+  font-size: 16px;
+}
+
+.searchbttn:hover .advancebutton{
+  background-color:#9ECEFB;
+  font-weight: bold;
+}
+
+.searchbttn:hover .searchreqs{
+  background-color: #C4C4C4;
+  display: block;
+}
+
+.calendar label{
+  display: inline-block;
+  width: 80px;
+}
+
+.calendar input{
+  margin-top: 10px;
+  display: inline-block;
+  width: 100px;
+}
+
+.watch label{
+  display: inline-block;
+  width: 80px;
+}
+
+.watch input{
+  display: inline-block;
+  width: 100px;
+}
+
+#ptime{
+  font-size: small;
+  font-style: italic;
+  line-height: 0ch;
+}
+
+#search-button{
+  margin: 9px 10px;
+  border: solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #c4c4c4;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#search-button:hover{
+  background-color:#9ECEFB;
+  font-weight: bold;
+}
+
+/*container for contents in Dashboard*/
+.infoContainer{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: solid;
+  border-radius: 8px;
+  background-color: #C4C4C4;
+  width: 100%;
+}
+
+#pIntro{
+  text-align: center;
+  background-color: #c4c4c4;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*info boxes in Dashboard*/
+#info1, #info2, #info3, #info4, #info5{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border: solid;
+  text-align: left;
+  background-color: #E5E5E5;
+  font-size: 20px;
+  width: auto;
+}
+
+#h3-dashInfo{
+  padding-left: 10px;
+}
+
+#hr-dashInfo{
+  border-top: 3px solid black;
+}
+
+#p-depart{
+  text-indent: 50px;
+}
+
+#p-arrival{
+  text-indent: 50px;
+}
+
+.showBooking{
+  display: block;
+}
+
+/*Layout for the open booking button*/
+.openbooking{
+  margin-left: 300px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #A3CE9F;
+  font-size: 16px;
+}
+
+.openbookingbuttn {
+  position: relative;
+  display: -webkit-inline-box;
+}
+
+.bookInfo {
+  padding-left: 20px;
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left;
+  font-size: 16px;
+}
+
+.openbookingbuttn:hover .openbooking{
+  background-color:#9ECEFB;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.openbooking.active{
+  background-color:#9ECEFB;
+  font-weight: bold;
+}
+
+.openbookingbuttn:hover .bookInfo{
+  background-color: #C4C4C4;
+  display: block;
+}
+
+.proceedbooking{
+  margin-left: 210px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border: solid;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.proceedbooking:hover {
+  background-color: #9ECEFB;
+  font-weight: bold;
+}
+
+/*Closed booking button*/
+.closedbooking{
+  margin-left: 300px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+  float:inline-end;
+  background-color: #E9ACAC;
+  font-size: 16px;
+}
+
+/*Make a Reservation*/
+#tab2 {
+  margin-left: 300px;
+  margin-right: 200px;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+#restab {
+  justify-content: center;
+  border-radius: 10px;
+  min-height: 100px;
+  overflow: hidden;
+  width: 400px;
+  float: left;
+  background-color:  #C4C4C4;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 30px;
+}
+
+#res-box {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 150px;
+  overflow: hidden;
+  width: 100%;
+  float: left;
+  background-color:  rgb(233, 233, 233);
+  border: none;
+  padding: 20px;
+}
+
+.res-select {
+  font-size: 20px;
+  position: center;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color:  rgb(233, 233, 233);
+}
+
+.res-select:hover, #res-time:hover, #res-date:hover {
+  opacity: 0.5;
+}
+
+.res-time{
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color:  rgb(233, 233, 233);
+}
+
+.res-date{
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color:  rgb(233, 233, 233);
+}
+
+#reserve-booking{
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  margin-left: 198px;
+  
+}
+
+#reserve-booking:hover{
+  background-color: #A3CE9F;  
+}
+
+/*Review Schedule*/
+#tab3 {
+  margin-left: 300px;
+  margin-right: 200px;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+.review-schedule {
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  padding: 15px 5px;
+  width: 100%;
+}
+
+.rs-table {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-collapse: separate; 
+  border-spacing: 0px 10px;
+  background-color: #C4C4C4;
+  table-layout: 100%;
+  width: 100%;
+}
+
+
+/*Review Schedule Texts*/
+.rs-date {
+  font-size: 25px;
+  text-align: left;
+  background-color: transparent;
+}
+
+.rs-pickup, .rs-destination {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  background-color: transparent;
+}
+
+.rs-cancel, .rs-complete {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.rs-cancel:hover {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  text-decoration: none; 
+  background-color: #E9ACAC;
+  border: 2px solid black;
+  padding: 5px 10px;
+}
+
+.rs-complete:hover {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  text-decoration: none; 
+  background-color: #A3CE9F;
+  border: 2px solid black;
+  padding: 5px 10px;
+}
+
+.rs-status {
+  font-size: 16px;
+  text-align: left;
+  background-color: transparent;
+}
+
+.rs-legend {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+}
+
+.rs-public-bk {
+  background-color: #E5E5E5;
+  color: black;
+  padding: 5px 15px;
+  border: none;
+}
+
+.rs-private-bk {
+  background-color: #E5E5E5;
+  color: black;
+  text-align: right;
+  padding: 5px 15px;
+  border: none;
+}
+
+.table-header {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+/*Booking History and Payment Report*/
+#tab4, #tab5 {
+  margin-left: 300px;
+  margin-right: 200px;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+.booking-history, .payment-report {
+  justify-content: left;
+  position: relative;
+  display: flex;
+  background-color: #C4C4C4;
+  border-radius: 10px;
+}
+
+/*Booking History and Payment Report Table*/
+.bh-table, .pr-table {
+  table-layout: 100%;
+  width: 100%;
+  padding: 15px 5px;
+  position: relative;
+  border: 3px solid black;
+}
+
+/*Payment Report Cost*/
+.totalCost {
+  text-align: right;
+  font-weight: bold;
+}
+
+/*Booking History and Payment Report Buttons*/
+
+.BH-buttons {
+  text-align: center;
+}
+
+.PR-buttons {
+  text-align: center;
+}
+
+.menuContentButton {
+  border: 2px solid black;
+  background-color: #E5E5E5;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: bold;
+  height: 40px;
+  width: auto;
+}
+
+.menuContentButton:hover {
+  background-color: #d3cece;
+}
+
+.menuContentButton.active {
+  background-color: #CDC3F5;
+}
+
+
+/*style for none.html*/
+.no-searchIcon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+}
+
+#not-found {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+#bestMatch {
+  font-family: 'Trebuchet MS';
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+}

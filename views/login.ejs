@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+  </head>
+  <body>
+    <div class="headers">
+      <div class="title-text">
+        <div class="title login">Login</div>
+        <div class="title signup">Register</div>
+      </div>
+      <!--Login and Register Slider-->
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Register</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="box">
+          <!--LOGIN BOX-->
+          <form class="login">
+            <div class="inputBox">
+              <input type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="inputBox">
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            <div class="inputBox btn">
+              <a href="/"><button type="button" class="loginbtn">Login</button></a>
+            </div>
+            <div class="signup-link">No account yet? <a href="">Create now!</a></div>
+          </form>
+          <!--REGISTER BOX-->
+          <form action="/add" method="post" class="signup">
+            <div class="inputBox">
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+            </div>
+            <div class="inputBox">
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" id="password" name="password" placeholder="Set Password" required>
+            </div>
+            <div class="inputBox btn">
+              <!--<div class="btn-layer"></div>-->
+              <a><button type="submit" class="registerbtn">Register</button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //enabling sliders
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      //button functions/condtions
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+      });
+    </script>
+
+  </body>
+</html>

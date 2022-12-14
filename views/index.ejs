@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shuttle Service</title>
+  <meta name="description" content="Phase1">
+  <meta name="keyword" content="HTML">
+  <meta name="author" content="CCAPDEV Grp19">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+
+<!-- Link to Jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Link to JavaScript -->
+<script src="assets/js/external.js"></script>
+
+<!-- Links to Bootstrap/JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- Displaying time and date -->
+  <p id="timeDate"></p>
+
+  <!-- Left Panel -->
+  <div class="menubar">
+    <h2 class="pageTitle">Shuttle Service</h2><br>
+    <a><img src="assets/images/shuttle.png" class="shuttle-icon"></a><br>
+    <button class="menulink" onclick="openTab(event, 'tab1')" id="defaultOpen">Dashboard</button>
+    <button class="menulink" onclick="openTab(event, 'tab2')">Make a Reservation</button>
+    <button class="menulink" onclick="openTab(event, 'tab3')">Review Schedule</button>
+    <button class="menulink" onclick="openTab(event, 'tab4')">Booking History</button>
+    <button class="menulink" onclick="openTab(event, 'tab5')">Payment Report</button>
+  </div>
+
+  <!--Menubar Contents-->
+  <div id="tab1" class="menuContent">
+    <!-- Dashboard Contents -->
+     <div class="searchbttn">
+            <button class="advancebutton">Advanced Search</button>
+            <div class="searchreqs">
+              <form>
+                  <!--calendar-->
+                  <div class="calendar" label for="date">Pick a date:
+                    <input type="date" id="date1" name="date">
+                    </div>
+                    <br>
+                    <!--time-->
+                    <div class="watch" label for="time">Pick a time: <input type="time" id="time1" name="time">
+                        <br><br><p id="ptime">Please indicate your departure time</p>
+                    </div>
+                    <!--Directs the user to the best match searching availability-->
+                    <input type="button" id="search-button" class="test" value="Search">
+                  </form>     
+            </div>
+        </div>
+        <div class="infoContainer">
+            <br><p id="pIntro">Choose a Booking</p>
+                <section id="info1">
+                    <h3 id="h3-dashInfo">Binondo</h3>
+                    <hr id="hr-dashInfo">
+                    <p id="p-depart">Departure Time   <b>9:00</b></p>
+                    <p id="p-arrival">Arrival Time <b>10:30</b></p>
+                    <div class="openbookingbuttn">
+                        <button class="openbooking">Book</button>
+                        <div id="dropdown-content" class="bookInfo">
+                          <form action = "/dashbook" method="get" id="dash-booking">
+                            <p>Number of Seat Available: 5</p>
+                            <p id="driver" value="driver">Driver's Name: Juan Dela Cruz</p>
+                            <p id="contact" value="contact">Contact Number: 0906178412</p>
+                            <label for="qty">Book for:</label>
+                              <input type="number" id="qty" value="qty" name="tentacles" min="1" max="5" required>
+                            <p id="amount" value="amount">Pls. pay this amount: <b>Php 90.00</b></p>
+                            <a><button type="submit" form="dash-booking" class="proceedbooking" value="proceed">PROCEED</button></a>
+                          </form>
+                        </div>
+                    </div>    
+                </section>
+                <section id="info2">
+                    <h3 id="h3-dashInfo">Binondo</h3>
+                    <hr>
+                    <p id="p-depart">Departure Time   <b>12:10</b></p>
+                    <p id="p-arrival">Arrival Time <b>13:30</b></p>
+                    <button class="closedbooking">Book</button> 
+                </section>
+                <section id="info3">
+                    <h3 id="h3-dashInfo">Legaspi Village</h3>
+                    <hr>
+                    <p id="p-depart">Departure Time   <b>18:00</b></p>
+                    <p id="p-arrival">Arrival Time <b>19:40</b></p>
+                    <button class="closedbooking">Book</button>    
+                </section>
+                <section id="info4">
+                    <h3 id="h3-dashInfo">Makati Square</h3>
+                    <hr>
+                    <p id="p-depart">Departure Time   <b>13:05</b></p>
+                    <p id="p-arrival">Arrival Time <b>14:00</b></p>
+                    <div class="openbookingbuttn">
+                        <button class="openbooking">Book</button>
+                        <div class="bookInfo">
+                          <form action = "/dashbook" method="get" id="dash-booking"></form>
+                            <p>Number of Seat Available: 8</p>
+                            <p id="driver" value="driver">Driver's Name: Jun Rodriguez</p>
+                            <p id="contact" value="contact">Contact Number: 0906548918</p>
+                            <label for="qty">Book for:</label>
+                              <input type="number" id="qty" value="qty" name="tentacles" min="1" max="5" required>
+                            <p id="amount" value="amount">Pls. pay this amount: <b>Php 116.00</b></p>
+                            <a><button type="submit" form="dash-booking" class="proceedbooking" value="Submit">PROCEED</button></a>
+                          </form>
+                        </div>
+                    </div>  
+                </section>
+                <section id="info5">
+                    <h3 id="h3-dashInfo">Makati Square</h3>
+                    <hr>
+                    <p id="p-depart">Departure Time   <b>18:00</b></p>
+                    <p id="p-arrival">Arrival Time <b>19:40</b></p>
+                    <button class="closedbooking">Book</button> 
+                </section>     
+        </div>
+  </div>
+
+  <div id="tab2" class="menuContent">
+    <!-- MAKE A RESERVATION -->
+    <form action="/book" method="post">
+    <div id="restab">
+      <div id="res-box">
+        <h2>Pick-up Location</h2>
+        <select name="RlocPU" id="RlocPU" class="res-select">
+          <option id="res-optdisplay" selected disabled hidden required>Select Location</option>
+          <option value="Binondo">Binondo</option>
+          <option value="De La Salle University">De La Salle University</option>
+          <option value="Legaspi Village">Legaspi Village</option>
+          <option value="Makati Square">Makati Square</option>
+          <option value="Quezon City">Quezon City</option>
+        </select>
+      </div>
+      <div id="res-box">
+        <h2>Destination</h2>
+        <select name="RlocD" id="RlocD" class="res-select">
+            <option id="res-optdisplay" selected disabled hidden required>Select Destination</option>
+            <option value="Binondo">Binondo</option>
+            <option value="De La Salle University">De La Salle University</option>
+            <option value="Legaspi Village">Legaspi Village</option>
+            <option value="Makati Square">Makati Square</option>
+            <option value="Quezon City">Quezon City</option>
+        </select>
+      </div>
+      <div id="res-box">
+        <h2>Date of Reservation</h2>
+          <input type="date" name="Rdate" id="Rdate" class="res-date" required>
+      </div>
+      <div id="res-box">
+        <h2>Expected Time</h2>
+        <input type= "time" name="Rtime" id="Rtime" class="res-time" required>
+      </div>
+      <a><button type="submit" id="reserve-booking">Reserve Booking</button></a>
+    </div>
+    </form>
+  </div>
+
+  <div id="tab3" class="menuContent">
+    <!-- REVIEW SCHEDULE -->
+    <div class="review-schedule">
+      <table class="rs-table">
+        <tr>
+          <td colspan="2"><p class="table-header">Review Schedule</p></td>
+        </tr>
+        <!--- DATA FROM DATABASE --->
+        <% bookinghistory.forEach(function(bookinghistory){ %>
+        <tr>
+          <td class="rs-public-bk">
+            <p class="rs-date"><%= bookinghistory.dateRes%></p>
+            <p class="rs-pickup">&nbsp From: <%= bookinghistory.locationPU%></p>
+            <p class="rs-destination">&nbsp To: <%= bookinghistory.locationD%></p>
+            <p class="rs-status">&nbsp Status: <%= bookinghistory.status%></p>
+          </td>
+          <td class="rs-private-bk">
+            <a href="delete/<%=bookinghistory._id%>" class="rs-cancel">Cancel</a><br><br>
+            <a href="complete/<%=bookinghistory._id%>" class="rs-complete">Complete</a>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+  </div>
+
+    
+  <div id="tab4" class="menuContent">
+    <!--- BOOKING HISTORY --->
+    <div class="booking-history">
+      <table class="bh-table">
+        <tr>
+          <td colspan="5"><p class="table-header">Booking History</p></td>
+        </tr>
+        <tr>
+          <th>Pick-up Location</th>
+          <th>Destination</th>
+          <th>Date of Reservation</th>
+          <th>Time Completed</th>
+          <th>Status</th>
+        </tr>
+        <!--- DATA FROM DATABASE --->
+        <% bookinghistory.forEach(function(bookinghistory){ %>
+          <tr>
+            <td><%= bookinghistory.locationPU%></td>
+            <td><%= bookinghistory.locationD%></td>
+            <td><%= bookinghistory.dateRes%></td>
+            <td><%= bookinghistory.timeEnd%></td>
+            <td><%= bookinghistory.status%></td>
+          </tr>
+        <% }); %>
+      </table>
+    </div>
+  </div>
+
+
+  <div id="tab5" class="menuContent">
+    <!--- PAYMENT REPORT --->
+    <div class="payment-report">
+      <table class="pr-table">
+        <tr>
+          <td colspan="4"><p class="table-header">Payment Report</p></td>
+        </tr>
+        <tr>
+          <th>Pick-up Location</th>
+          <th>Destination</th>
+          <th>Date of Reservation</th>
+          <th>Cost</th>
+        </tr>
+        <!--- DATA FROM DATABASE --->
+        <% bookinghistory.forEach(function(bookinghistory){ %>
+          <tr>
+            <td><%= bookinghistory.locationPU%></td>
+            <td><%= bookinghistory.locationD%></td>
+            <td><%= bookinghistory.dateRes%></td>
+            <td>₱<%= bookinghistory.payment%></td>
+          </tr>
+        <% }); %>
+      </table>
+    </div>
+  </div>
+  <!--[End]Menubar Contents-->
+
+  <!--[Right Pane]div class for the right bar that contains the profile and other settings -->
+  <div class="rightbar">
+    <a><img src="assets/images/icon.png" class="profile-icon"></a><br><br>
+    <p class="user-fullname">Welcome,<br> John Doe!</p>
+    <br><br>
+    <div class="exit">
+      <a><img src="assets/images/signout.png" class="sign-out"></a>
+      <a href="/login">Sign Out</a>
+    </div>
+  </div>
+
+  <script>
+    //Defaulting the index page to homepage/dashboard
+    document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+</html>

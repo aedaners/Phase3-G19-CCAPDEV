@@ -1,0 +1,74 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Search Results</title>
+
+        <!-- Link to CSS -->
+        <link rel="stylesheet" type="text/css" media="all" href="assets/css/style.css">
+
+        <!-- Link to Jquery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+        <!-- Link to JavaScript -->
+        <script src="assets/js/external.js"></script>
+
+    </head>
+    <body>
+        <p id="timeDate"></p>
+        <div class="searchbttn">
+            <button class="advancebutton">Advanced Search</button>
+            <div class="searchreqs">
+                <form>
+                    <!--calendar-->
+                    <div class="calendar" label for="date">Pick a date:
+                      <input type="date" id="date1" name="date">
+                      </div>
+                      <br>
+                      <!--time-->
+                      <div class="watch" label for="time">Pick a time: <input type="time" id="time1" name="time">
+                          <p id="ptime">Please indicate your departure time</p>
+                      </div>
+                      <!--Directs the user to the best match searching availability-->
+                      <input type="button" id="search-button" class="test" value="Search">
+                </form>  
+            </div>
+        </div>
+
+        <p id="bestMatch">Bookings for April 4, 2023</p>
+        <div class="infoContainer">
+            <p id="pIntro">Choose a Booking</p>
+                <section id="info1">
+                    <h3 id="h3-dashInfo">Legaspi Village</h3>
+                    <hr id="hr-dashInfo">
+                    <p id="p-depart">Departure Time   <b>9:00</b></p>
+                    <p id="p-arrival">Arrival Time <b>10:30</b></p>
+                    <div class="openbookingbuttn">
+                        <button class="openbooking" onclick="openBooking()">Book</button>
+                        <div id="dropdown-content" class="bookInfo">
+                            <p>Number of Seat Available: 5</p>
+                            <p>Driver's Name: Juan Dela Cruz</p>
+                            <p>Contact Number: 0906178412</p>
+                            <label for="tentacles">Book for:</label>
+                            <form>
+                              <input type="number" id="tentacles" name="tentacles" min="1" max="5">
+                            </form>
+                            <p>Pls. pay this amount: <b>Php 90.00</b></p>
+                            <button type="submit" class="proceedbooking">PROCEED</button>
+                        </div>
+                    </div>    
+                </section>
+                <section id="info2">
+                    <h3 id="h3-dashInfo">Intramuros</h3>
+                    <hr>
+                    <p id="p-depart">Departure Time   <b>12:10</b></p>
+                    <p id="p-arrival">Arrival Time <b>13:30</b></p>
+                    <button class="closedbooking">Book</button> 
+                </section> 
+        </div>
+    </body>
+    <script>
+        var d;
+         d = new Date();
+        document.getElementById("timeDate").innerHTML = d;
+    </script>
+</html>
