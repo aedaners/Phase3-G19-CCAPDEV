@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const { Int32, Decimal128 } = require("mongodb");
 const Schema = mongoose.Schema;
 const app = express();
-const port = 3000
+const PORT = process.env.PORT || 3000;
 
 /// --- CONNECT TO MONGODB --- ///
 mongoose.connect("mongodb://127.0.0.1:27017/dbShuttleService?directConnection=true", {useNewUrlParser: true});
@@ -204,6 +204,6 @@ function getCurrentTime() {
 
 
 /// --- LISTEN ON PORT 3000 --- ///
-app.listen(process.env.PORT || 3000, function () {
+app.listen(PORT, function () {
     console.log("Server started on port 3000");
 });
